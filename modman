@@ -1,0 +1,4 @@
+app/etc/modules/Ash_Uploads.xml  app/etc/modules/Ash_Uploads.xml
+app/code/community/Ash/Uploads/  app/code/community/Ash/Uploads/
+app/locale/en_US/*               app/locale/en_US/
+README.md                        app/code/community/Ash/Uploads/README.md

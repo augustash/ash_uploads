@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Easily attach file upload functionality to a module
+ *
+ * @category    Ash
+ * @package     Ash_Uploads
+ * @copyright   Copyright (c) 2015 August Ash, Inc. (http://www.augustash.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php Open Software Licence 3.0 (OSL-3.0)
+ * @see         https://github.com/Jarlssen/Jarlssen_UploaderComponent
+ */
+-->
+<config>
+    <modules>
+        <Ash_Uploads>
+            <version>1.0.0</version>
+        </Ash_Uploads>
+    </modules>
+
+    <global>
+        <helpers>
+            <ash_uploads>
+                <class>Ash_Uploads_Helper</class>
+            </ash_uploads>
+        </helpers>
+        <models>
+            <ash_uploads>
+                <class>Ash_Uploads_Model</class>
+            </ash_uploads>
+        </models>
+    </global>
+
+    <adminhtml>
+        <events>
+            <model_save_before>
+                <observers>
+                    <ash_uploads_process_file_upload>
+                        <type>model</type>
+                        <class>ash_uploads/observer</class>
+                        <method>processUpload</method>
+                    </ash_uploads_process_file_upload>
+                </observers>
+            </model_save_before>
+            <model_delete_after>
+                <observers>
+                    <ash_uploads_process_file_removal>
+                        <type>model</type>
+                        <class>ash_uploads/observer</class>
+                        <method>processRemovals</method>
+                    </ash_uploads_process_file_removal>
+                </observers>
+            </model_delete_after>
+        </events>
+    </adminhtml>
+
+    <defaults>
+        <ash_uploads>
+            <general>
+                <enabled>1</enabled>
+            </general>
+        </ash_uploads>
+    </defaults>
+</config>

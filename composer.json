@@ -1,0 +1,19 @@
+{
+    "name": "augustash/ash_uploads",
+    "description": "Enable file uploads for Magento extensions",
+    "homepage": "https://github.com/augustash/ash_uploads.git",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Pete McWilliams",
+            "email": "pmcwilliams@augustash.com"
+        }
+    ],
+    "type": "magento-module",
+    "require": {
+        "augustash/ash_core": "*"
+    },
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
